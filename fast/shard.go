@@ -24,6 +24,7 @@ type entry struct {
 }
 
 // new 创建一个新的 cacheShard，如果 maxBytes 是 0，表示没有容量限制
+// maxEntries 表示单个分片的最大容纳记录数
 func newCacheShard(maxEntries int, onEvicted func(key string, value interface{})) *cacheShard {
 	return &cacheShard{
 		maxEntries: maxEntries,
